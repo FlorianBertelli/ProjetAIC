@@ -1,11 +1,13 @@
-This is a sample starting kit for the Iris challenge. 
-It uses the well known Iris dataset from Fisher's classic paper (Fisher, 1936). The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other.
+This is a sample starting kit for the Xporters challenge. 
+
+The aim of the challenge is to provide a prediction of the flow traffic volume of NY city. The features are the date, the weather, temperature...all features are given into sample_exemple.
+The data has been recorded between 2012 ans 2018
 
 References and credits: 
 R. A. Fisher. The use of multiple measurements in taxonomic problems. Annual Eugenics, 7, Part II, 179-188 (1936). 
 
 Prerequisites:
-Install Anaconda Python 3.6.6 
+Install Anaconda Python 3.7.3 
 
 Usage:
 
@@ -13,7 +15,7 @@ Usage:
 
 - The three files sample_*_submission.zip are sample submissions ready to go!
 
-- The file README.ipynb contains step-by-step instructions on how to create a sample submission for the Iris challenge. 
+- The file README.ipynb contains step-by-step instructions on how to create a sample submission for the Xporters challenge. 
 At the prompt type:
 jupyter-notebook README.ipynb
 
