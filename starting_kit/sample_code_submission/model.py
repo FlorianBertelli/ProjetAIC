@@ -21,7 +21,7 @@ class model (BaseEstimator):
         self.num_feat=1
         self.num_labels=1
         self.is_trained=False
-
+        self.mod = None
     def fit(self, X, y):
         '''
         This function should train the model parameters.
@@ -46,6 +46,12 @@ class model (BaseEstimator):
             print("ARRGH: number of samples in X and y do not match!")
         self.is_trained=True
 
+        from sklearn.ensemble import RandomForestRegressor
+
+        self.mod = RandomForestRegressor(max_depth=20, random_state=0,  n_estimators=100)
+
+        self.mod.fit(X,y)
+
     def predict(self, X):
         '''
         This function should provide predictions of labels on (test) data.
@@ -66,7 +72,7 @@ class model (BaseEstimator):
         print("PREDICT: dim(y)= [{:d}, {:d}]".format(num_test_samples, self.num_labels))
         y = np.zeros([num_test_samples, self.num_labels])
         # If you uncomment the next line, you get pretty good results for the Iris data :-)
-        #y = np.round(X[:,3])
+        y = self.mod.predict(X)
         return y
 
     def save(self, path="./"):
