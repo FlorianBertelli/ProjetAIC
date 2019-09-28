@@ -3,10 +3,10 @@ temp
 rain_1h
 snow_1h
 clouds_all
+weekday
 hour
-Year
-Month
-Day
+month
+year
 weather_main_Clear
 weather_main_Clouds
 weather_main_Drizzle
