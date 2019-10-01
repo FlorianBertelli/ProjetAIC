@@ -7,8 +7,10 @@ than one function, hence you must specify the name of the function that is your 
 import numpy as np
 import scipy as sp
 
-def mse_metric(solution, prediction):
-    '''Mean-square error.
+def r2_metric(solution, prediction):
+    '''r2_metric error.
     Works even if the target matrix has more than one column'''
-    mse = np.mean((solution-prediction)**2)
-    return np.mean(mse)
+    mse = np.mean((prediction - solution)**2)
+    var = np.mean((solution - np.mean(solution)) ** 2)
+    score = 1 - mse / var
+    return score
