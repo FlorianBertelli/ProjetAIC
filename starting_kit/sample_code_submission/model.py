@@ -10,6 +10,7 @@ import pickle
 import numpy as np   # We recommend to use numpy arrays
 from os.path import isfile
 from sklearn.base import BaseEstimator
+from sklearn.ensemble import RandomForestRegressor
 
 class model (BaseEstimator):
     def __init__(self):
@@ -21,7 +22,8 @@ class model (BaseEstimator):
         self.num_feat=1
         self.num_labels=1
         self.is_trained=False
-        self.mod = None
+        self.mod = RandomForestRegressor(max_depth=20, random_state=0,  n_estimators=100) # Initalizing the model 
+    
     def fit(self, X, y):
         '''
         This function should train the model parameters.
@@ -44,13 +46,8 @@ class model (BaseEstimator):
         print("FIT: dim(y)= [{:d}, {:d}]".format(num_train_samples, self.num_labels))
         if (self.num_train_samples != num_train_samples):
             print("ARRGH: number of samples in X and y do not match!")
-        self.is_trained=True
-
-        from sklearn.ensemble import RandomForestRegressor
-
-        self.mod = RandomForestRegressor(max_depth=20, random_state=0,  n_estimators=100)
-
         self.mod.fit(X,y)
+        self.is_trained = True
 
     def predict(self, X):
         '''
